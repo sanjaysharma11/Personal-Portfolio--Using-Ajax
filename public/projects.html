@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #2d3436;
+      background-color: #f0f3f5;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      padding: 100px 20px;
+    }
+
+    .gallery .section_title {
+      text-align: center;
+      padding-bottom: 50px;
+      font-size: 42px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #3498db;
+      margin-bottom: 60px;
+      letter-spacing: 2px;
+    }
+
+    .gallery .section_title::after {
+      content: '';
+      width: 100px;
+      background: #3498db;
+      height: 4px;
+      display: block;
+      margin: 20px auto 0;
+      border-radius: 4px;
+    }
+
+    .gallery_container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .gallery_items {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+    }
+
+    .gallery_items::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(155, 89, 182, 0.9));
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .gallery_items:hover::before {
+      opacity: 1;
+    }
+
+    .gallery_items:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery_items img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .gallery_items:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery_items .text {
+      padding: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery_items .text h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .gallery_items:hover .text h3 {
+      color: #ffffff;
+    }
+
+    .gallery_items .text p {
+      font-size: 16px;
+      color: #7f8c8d;
+      margin-bottom: 25px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .gallery_items:hover .text p {
+      color: #ecf0f1;
+    }
+
+    .gallery_items .text a {
+      display: inline-block;
+      background-color: #3498db;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+      margin-right: 15px;
+      box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    }
+
+    .gallery_items .text a:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+    }
+
+    .gallery_items .text .github-btn {
+      background-color: #9b59b6;
+      box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3);
+    }
+
+    .gallery_items .text .github-btn:hover {
+      background-color: #8e44ad;
+      box-shadow: 0 6px 15px rgba(155, 89, 182, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <h2 class="section_title">Projects</h2>
+    <div class="gallery_container">
+      <div class="gallery_items">
+        <img src="project1.svg" alt="Project 1" />
+        <div class="text">
+          <h3>PHP Blog Management System</h3>
+          <p>Developed a dynamic blog system using PHP, MySQL, HTML, CSS, and Bootstrap. Includes various features for
+            different user roles. Admins can manage posts and users, while super admins can also handle categories and co-admins.</p>
+          <a href="https://bloggerone.lovestoblog.com/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+      <div class="gallery_items">
+        <img src="./photos/Ai website Builder.png" alt="Project 2" />
+        <div class="text">
+          <h3>Ai website Builder</h3>
+          <p>Effortlessly create professional websites in minutes with our AI-powered tool. Customize designs, content, and layouts with ease, while enjoying built-in features like SEO optimization and performance enhancements. Perfect for anyone looking to build a responsive and functional website quickly.
+          </p>
+          <a href="https://samaiwebsitebuilder.netlify.app/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+      <div class="gallery_items">
+        <img src="/photos/coffe1.png" alt="Project 3" />
+        <div class="text">
+          <h3>Coffe Website</h3>
+          <p>Dive into the world of coffee with our beautifully designed single-page website. Explore various coffee types, brewing methods, and recipes, all presented with a sleek and modern interface.</p>
+          <a href="https://coffeeforyou123.netlify.app/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+      <div class="gallery_items">
+        <img src="/photos/chattingapp.png" alt="Project 4" />
+        <div class="text">
+          <h3>Chatting App</h3>
+          <p>Connect with friends and family instantly using my real-time messaging app.</p>
+          <a href="https://chattinghub.000.pe/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+      <div class="gallery_items">
+        <img src="/photos/portfolio121.png" alt="Project 5" />
+        <div class="text">
+          <h3>Portfolio Website</h3>
+          <p>Create a Portfolio Website Using React and Tailwind CSS</p>
+          <a href="https://codewithsams.netlify.app/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+      <div class="gallery_items">
+        <img src="./photos/animated.png" alt="Project 6" />
+        <div class="text">
+          <h3>3D Animated Portfolio Websites</h3>
+          <p>Create another Reactjs 3D Portfolio Website</p>
+          <a href="https://sanjay3dportfolio.netlify.app/">Try It</a>
+          <!-- <a href="#" class="github-btn">GitHub</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

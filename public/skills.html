@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hue-color: 250;
+            --first-color: hsl(var(--hue-color), 69%, 61%);
+            --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+            --title-color: hsl(var(--hue-color), 8%, 15%);
+            --text-color: hsl(var(--hue-color), 8%, 45%);
+            --body-color: hsl(var(--hue-color), 60%, 99%);
+            --container-color: #fff;
+            --frontend-color: #3498db;
+            --backend-color: #2ecc71;
+            --design-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            --body-color: hsl(var(--hue-color), 28%, 12%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 75%);
+            --container-color: hsl(var(--hue-color), 29%, 16%);
+        }
+
+        .skills-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--title-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background-color: var(--first-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+            gap: 15px 5px;
+        }
+
+        .skill-hex {
+            width: 120px;
+            height: 138px;
+            background-color: var(--container-color);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-hex:nth-child(even) {
+            margin-top: 69px;
+        }
+
+        .skill-content {
+            text-align: center;
+            color: var(--title-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-hex:hover .skill-description {
+            opacity: 1;
+        }
+
+        .skill-hex.frontend { background-color: var(--frontend-color); }
+        .skill-hex.backend { background-color: var(--backend-color); }
+        .skill-hex.design { background-color: var(--design-color); }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--container-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: var(--first-color);
+            color: var(--container-color);
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                max-width: 600px;
+            }
+            .skill-hex {
+                width: 100px;
+                height: 115px;
+            }
+            .skill-hex:nth-child(even) {
+                margin-top: 57.5px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-hex {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .skill-hex:nth-child(1) { animation-delay: 0.1s; }
+        .skill-hex:nth-child(2) { animation-delay: 0.2s; }
+        .skill-hex:nth-child(3) { animation-delay: 0.3s; }
+        .skill-hex:nth-child(4) { animation-delay: 0.4s; }
+        .skill-hex:nth-child(5) { animation-delay: 0.5s; }
+        .skill-hex:nth-child(6) { animation-delay: 0.6s; }
+        .skill-hex:nth-child(7) { animation-delay: 0.7s; }
+        .skill-hex:nth-child(8) { animation-delay: 0.8s; }
+        .skill-hex:nth-child(9) { animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+
+    <section id="skills" class="skills-section" style="margin-top: 40px;">
+        <h2 class="section-title" style="color: #3498db;">Skills</h2>    
+        <span class="section-subtitle" style="margin-top: 20px;">My Technical Expertise</span>
+
+        
+        <div class="skills-grid">
+            <div class="skill-hex frontend">
+                <div class="skill-content">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-description">Structuring web content with semantic HTML5</div>
+                </div>
+            </div>
+            <div class="skill-hex frontend">
+                <div class="skill-content">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-description">Styling and layouting with modern CSS techniques</div>
+                </div>
+            </div>
+            <div class="skill-hex frontend">
+                <div class="skill-content">
+                    <div class="skill-name">Bootstrap</div>
+                    <div class="skill-description">Rapid prototyping with Bootstrap framework</div>
+                </div>
+            </div>
+            <div class="skill-hex frontend">
+                <div class="skill-content">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-description">Building interactive web applications</div>
+                </div>
+            </div>
+            <div class="skill-hex frontend">
+                <div class="skill-content">
+                    <div class="skill-name">React</div>
+                    <div class="skill-description">Creating dynamic UIs with React ecosystem</div>
+                </div>
+            </div>
+            <div class="skill-hex backend">
+                <div class="skill-content">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-description">Server-side JavaScript with Node.js</div>
+                </div>
+            </div>
+            <div class="skill-hex backend">
+                <div class="skill-content">
+                    <div class="skill-name">PHP MySQL</div>
+                    <div class="skill-description">Backend development with PHP and MySQL</div>
+                </div>
+            </div>
+            <div class="skill-hex design">
+                <div class="skill-content">
+                    <div class="skill-name">Figma</div>
+                    <div class="skill-description">UI/UX design and prototyping with Figma</div>
+                </div>
+            </div>
+            <div class="skill-hex backend">
+                <div class="skill-content">
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-description">NoSQL database management with MongoDB</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        let darkMode = false;
+
+        darkModeToggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode', darkMode);
+            darkModeToggle.textContent = darkMode ? '☀️' : '🌓';
+        });
+    </script>
+</body>
+</html>

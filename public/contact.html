@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Portfolio Website</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --background-color: #ffffff;
+            --form-bg-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .contact {
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section_title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .contact_container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--form-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact_text {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .social_links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social_links a {
+            color: var(--primary-color);
+            font-size: 24px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social_links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .social_links a:hover i {
+            animation: bounce 0.5s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact" id="contact">
+        <h2 class="section_title">Get in Touch</h2>
+        <div class="contact_container">
+            <div class="contact_text">
+                <p>
+                    Thank you for visiting my portfolio website. I'm always excited to connect with new people, discuss potential projects, or answer any questions you might have. Feel free to reach out using this contact form, and I'll get back to you as soon as possible.
+                </p>
+                <p>
+                    Whether you're interested in my work, have a collaboration proposal, or just want to say hello, I'm here and happy to chat. Looking forward to hearing from you!
+                </p>
+            </div>
+            <div class="contact_form">
+                           
+            </div>
+            <div class="social_links">
+                <a href="https://github.com/sanjaysharma11" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/sanjay-kumar-sharma121/" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.youtube.com/@techbabay" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
